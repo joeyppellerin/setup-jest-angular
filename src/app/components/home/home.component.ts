@@ -10,11 +10,6 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.method();
-  }
-
-  public method(): boolean {
-    return false;
   }
 
 }
