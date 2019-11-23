@@ -27,11 +27,27 @@ describe('HomeComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('h1 tag should exist: data-testid tag', () => {
-    const h1 = queryByTestId(CONTAINER, 'ok');
+  describe('component', () => {
+    it('jasmine', () => {
+      spyOn(component, 'method').and.returnValue(true);
 
-    expect(h1).toBeTruthy();
-    expect(h1.textContent).toContain('@briebug');
+      expect(component.method()).toBeTruthy();
+    });
+
+    test('jest', () => {
+      component.method = jest.fn(() => true );
+
+      expect(component.method()).toBeTruthy();
+    });
+  });
+
+  describe('template', () => {
+    it('h1 tag should exist', () => {
+      const h1 = queryByTestId(CONTAINER, 'ok');
+
+      expect(h1).toBeTruthy();
+      expect(h1.textContent).toContain('@briebug');
+    });
   });
 
   it('h1 tag should exist: fixture.debugElement', () => {

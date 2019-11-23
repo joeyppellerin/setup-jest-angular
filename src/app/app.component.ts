@@ -6,8 +6,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'setup-jest-angular';
-
-  public allo(): boolean {
-    return false;
-  }
 }
