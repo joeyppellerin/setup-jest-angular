@@ -51,7 +51,7 @@ describe('HomeComponent', () => {
   });
 
   it('h1 tag should exist: fixture.debugElement', () => {
-    const h1 = fixture.debugElement.query(By.css('h1');
+    const h1 = fixture.debugElement.query(By.css('h1'));
 
     expect(h1).toBeTruthy();
     expect(h1.nativeElement.textContent).toContain('@briebug');
