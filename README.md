@@ -3,10 +3,14 @@
 ## Setup Jest
 
 1. Dans le répertoire d'un projet Angular, entrer la ligne de commande : 
-#### npm install [-g] @briebug/jest-schematic
+<ul>
+  <li>npm install [-g] @briebug/jest-schematic</li>
+</ul>
 
 2. Générer les configurations de Jest et suppression des fichiers de karma. Entrer la ligne de commande : 
-#### ng g @briebug/jest-schematic:add
+<ul>
+  <li>ng g @briebug/jest-schematic:add</li>
+</ul>
 
 3. Créer un fichier de configuration à la racine du projet. Le nommer jest.config.json.
 
