@@ -29,6 +29,8 @@ export class HomeComponent implements OnInit {
   }
 
   private formatName(name: Name): void {
-    this.name = `${name.first} ${name.last}`;
+    if (name && name.first && name.last) {
+      this.name = `${name.first} ${name.last}`;
+    }
   }
 }

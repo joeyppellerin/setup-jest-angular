@@ -1,20 +1,24 @@
 <div>
+  <div class="class">
+    <h1 data-testid="title">Setup Jest with @briebug/jest-schematic</h1>
+    <app-un-autre-component></app-un-autre-component>
+  </div>
+  <div>
     <div class="class">
-      <h1 data-testid="title">Setup Jest with @briebug/jest-schematic</h1>
+      <p>Mon nom est :</p>
+      <p *ngIf="name" data-testid="name">{{ name }}</p>
+      <p *ngIf="isMale;else female">Non, c'est complètement faux!</p>
+      <ng-template #female>Je ne suis pas une femme.</ng-template>
     </div>
+  </div>
+  <div>
     <div>
       <div class="class">
-        <p>Mon nom est :</p>
-        <p *ngIf="name" data-testid="name">{{ name }}</p>
-        <p *ngIf="isMale;else AWomen">Non, c'est complètement faux!</p>
-        <ng-template #AWomen>Non, je ne suis pas une femme.</ng-template>
-      </div>
-    </div>
-    <div>
-      <div>
-        <div class="class">
-          <p> </p>
-        </div>
+        <p>&nbsp;</p>
       </div>
     </div>
   </div>
+</div>
+
+  <!-- Démontre que de cibler des éléments du DOM sans id de test n'est pas résiliant -->
+  <!-- <div class="class"><p>&nbsp;</p></div> -->
