@@ -1,3 +1,20 @@
-<h1 data-testid="ok">
-  Setup Jest with @briebug/jest-schematic
-</h1>
+<div>
+    <div class="class">
+      <h1 data-testid="title">Setup Jest with @briebug/jest-schematic</h1>
+    </div>
+    <div>
+      <div class="class">
+        <p>Mon nom est :</p>
+        <p *ngIf="name" data-testid="name">{{ name }}</p>
+        <p *ngIf="isMale;else AWomen">Non, c'est complètement faux!</p>
+        <ng-template #AWomen>Non, je ne suis pas une femme.</ng-template>
+      </div>
+    </div>
+    <div>
+      <div>
+        <div class="class">
+          <p> </p>
+        </div>
+      </div>
+    </div>
+  </div>

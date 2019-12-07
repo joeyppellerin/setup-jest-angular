@@ -1,18 +1,18 @@
-/* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HomeComponent } from './home.component';
 import { queryByTestId } from '@testing-library/dom';
 import { By } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
 
-  const CONTAINER = document.body;
-
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomeComponent ]
+      imports: [HttpClientModule],
+      declarations: [ HomeComponent ],
+      providers: [HttpClientModule]
     })
     .compileComponents();
   }));
@@ -28,32 +28,38 @@ describe('HomeComponent', () => {
   });
 
   describe('component', () => {
-    it('jasmine', () => {
-      spyOn(component, 'method').and.returnValue(true);
+    describe('Jasmine', () => {
+      it('', () => {
 
-      expect(component.method()).toBeTruthy();
+      });
     });
 
-    test('jest', () => {
-      component.method = jest.fn(() => true );
-
-      expect(component.method()).toBeTruthy();
+    describe('Jest', () => {
+      test.todo('reminder to do this test');
+      // test.only('same as fit');
+      test.skip('same as xit', () => {});
     });
   });
 
   describe('template', () => {
-    it('h1 tag should exist', () => {
-      const h1 = queryByTestId(CONTAINER, 'ok');
+    describe('fixture.debugElement', () => {
+      it('h1 tag should exist: fixture.debugElement', () => {
+        const h1 = fixture.debugElement.query(By.css('h1'));
 
-      expect(h1).toBeTruthy();
-      expect(h1.textContent).toContain('@briebug');
+        expect(h1).toBeTruthy();
+        expect(h1.nativeElement.textContent).toContain('@briebug');
+      });
     });
-  });
 
-  it('h1 tag should exist: fixture.debugElement', () => {
-    const h1 = fixture.debugElement.query(By.css('h1'));
+    describe('@testing-library/dom', () => {
+      const CONTAINER = document.body;
 
-    expect(h1).toBeTruthy();
-    expect(h1.nativeElement.textContent).toContain('@briebug');
+      test('h1 tag should exist', () => {
+        const h1 = queryByTestId(CONTAINER, 'title');
+
+        expect(h1).toBeTruthy();
+        expect(h1.textContent).toContain('@briebug');
+      });
+    });
   });
 });
